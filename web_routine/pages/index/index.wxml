@@ -1,6 +1,10 @@
 <!--index.wxml-->
 <view class="container">
+  <view class='input_handle'>
+    苏州
+  </view>
   <view class="userinfo">
+    
     <button wx:if="{{!hasUserInfo && canIUse}}" class='button' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 开始 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>

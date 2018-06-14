@@ -1,4 +1,13 @@
 /**index.wxss**/
+.input_handle {
+  height: 80rpx;
+  background: #fff;
+  width: 100%;
+  line-height: 80rpx;
+  padding-left:40rpx;
+  font-size: 9prx;
+  box-shadow: 3rpx 3rpx 5rpx 3rpx #ccc
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -21,7 +30,7 @@
 }
 
 .user-motto {
-  color: #fff
+  color: #aaa
 }
 
 .button {
@@ -33,7 +42,7 @@
 .container {
   height: 100%;
   width: 100%;
-  background-image: url("//hbfile.b0.upaiyun.com/img/home/banner/b5f1b4311b029c3c21c21324d895ee9e652109e65767e");
+ 
   background-size:cover;
   background-repeat: no-repeat;
 }

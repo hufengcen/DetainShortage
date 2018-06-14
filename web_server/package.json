@@ -1,0 +1,32 @@
+{
+  "name": "envServer",
+  "version": "1.0.0",
+  "description": "env service",
+  "author": "hufengcen <hufengcen@sina.com>",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "graphql": "^0.13.2",
+    "graphql-server-koa": "^1.3.6",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.3",
+    "mongoose": "^5.1.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-latest-node": "^1.0.0",
+    "babel-preset-stage-3": "^6.24.1"
+  },
+  "engines": {
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

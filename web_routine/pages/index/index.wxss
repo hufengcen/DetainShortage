@@ -1,0 +1,39 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.user-motto {
+  color: #fff
+}
+
+.button {
+  background: transparent;
+  color: #fff;
+  border: 5rpx solid #ccc
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background-image: url("//hbfile.b0.upaiyun.com/img/home/banner/b5f1b4311b029c3c21c21324d895ee9e652109e65767e");
+  background-size:cover;
+  background-repeat: no-repeat;
+}

@@ -1,14 +1,19 @@
+var amapFile = require('../../libs/amap-wx.js');
 //index.js
 //获取应用实例
 const app = getApp()
-
+var markersData = [];
 Page({
   data: {
     motto: '集集站',
     desc:'11111111',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    markers: [],
+    latitude: '',
+    longitude: '',
+    textData: {}
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,7 +21,35 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function (e) {;
+  makertap: function (e) {
+    var id = e.markerId;
+    var that = this;
+    that.showMarkerInfo(markersData, id);
+    that.changeMarkerColor(markersData, id);
+  },
+  onLoad: function (e) {
+    var that = this;
+    var myAmapFun = new amapFile.AMapWX({ key: '70cecbcc94d44a4ca288d50f396feacf' });
+    myAmapFun.getPoiAround({
+      iconPathSelected: './image/javasFather.jpg', //如：..­/..­/img/marker_checked.png
+      iconPath: './image/javasFather.jpg', //如：..­/..­/img/marker.png
+      success: function (data) {
+        markersData = data.markers;
+        that.setData({
+          markers: markersData
+        });
+        that.setData({
+          latitude: markersData[0].latitude
+        });
+        that.setData({
+          longitude: markersData[0].longitude
+        });
+        that.showMarkerInfo(markersData, 0);
+      },
+      fail: function (info) {
+        wx.showModal({ title: info.errMsg })
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,6 +76,32 @@ Page({
         }
       })
     }
+  },
+  showMarkerInfo: function (data, i) {
+    var that = this;
+    that.setData({
+      textData: {
+        name: data[i].name,
+        desc: data[i].address
+      }
+    });
+  },
+  changeMarkerColor: function (data, i) {
+    var that = this;
+    var markers = [];
+    for (var j = 0; j < data.length; j++) {
+      if (j == i) {
+        data[j].iconPath = "./image/javasFather.jpg"; //如：..­/..­/img/marker_checked.png
+      } else {
+        data[j].iconPath = "./image/javasFather.jpg"; //如：..­/..­/img/marker.png
+      }
+      
+      markers.push(data[j]);
+    }
+    console.log(data,111111111)
+    that.setData({
+      markers: markers
+    });
   },
   getUserInfo: function(e) {
     console.log(e)

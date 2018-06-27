@@ -27,11 +27,7 @@
 }
 
 .usermotto {
-  margin-top: 200px;
-}
-
-.user-motto {
-  color: #aaa
+  margin-top: 0px;
 }
 
 .button {
@@ -43,7 +39,6 @@
 .container {
   height: 100%;
   width: 100%;
- 
   background-size:cover;
   background-repeat: no-repeat;
 }
@@ -73,4 +68,118 @@ text{
   margin: 5px 0;
   display: block;
   font-size:12px;
+}
+
+.info{
+  width:50px;
+  height:100rpx;
+  z-index: 999;
+  position:absolute;
+  bottom:270rpx;
+  right:100rpx;
+  background: transparent;
+  border: 0;
+  padding:0;
+}
+
+.info .img{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 20rpx
+}
+
+.actInfo{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  top:0;
+  background: rgba(0,0,0,0.7);
+  z-index:9999;
+  color:#fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box
+}
+.actInfo .infoHeader{
+  display: flex;
+  flex-direction: row;
+  padding-left: 20rpx;
+  margin-bottom: 10rpx;
+  padding-top: 10rpx;
+}
+
+.actInfo .infoHeader text{
+  font-size: 50rpx;
+}
+
+.actInfo .infoName{
+  padding-left: 20rpx;
+  margin-bottom: 10rpx
+  
+}
+
+.actInfo .infoName text{
+  
+}
+
+.actInfo .infoAdress {
+  padding-left: 20rpx;
+}
+
+.actInfo .infoContent{
+  height: 500rpx;
+  padding-left: 20rpx;
+  padding-right: 100rpx;
+  margin-bottom: 10rpx
+}
+.actInfo .infoContent text{
+  font-size: 35rpx
+}
+
+.actInfo .applyToNao {
+  padding: 10rpx 20rpx;
+  border:1rpx solid #fff;
+  border-radius: 2rpx;
+  margin: 0 auto;
+  
+}
+
+.getPhoneNumber{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  top:0;
+  background: rgba(0,0,0,0.7);
+  z-index:9999;
+  color:#fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.getPhoneNumber text{
+  margin: 200rpx 0 50rpx;
+  font-size: 35rpx
+}
+
+.getPhoneNumber .getPhoneInput{
+  border: 1px solid #fff;
+  width: 300rpx;
+  height: 50rpx;
+  border-radius: 2rpx;
+  padding-left:18rpx
+}
+.getPhoneNumber .noticbtn{
+  border: 1px solid #fff;
+  width:300rpx;
+  padding: 10rpx 0;
+  text-align: center;
+  border-radius: 2rpx;
+  margin-top: 400rpx
 }

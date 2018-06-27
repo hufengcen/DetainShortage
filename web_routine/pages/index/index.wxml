@@ -1,20 +1,39 @@
 <!--index.wxml-->
 <view class="container">
-  <view class='input_handle'>
-    苏州
-  </view>
-  <view class="map_container">
+   <view class="map_container">
     <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map>
   </view>
-  <view class="userinfo">
-    
-    <button wx:if="{{!hasUserInfo && canIUse}}" class='button' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 开始 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class="info">
+    <view bindtap="getUserInfo">
+      <image src="./image/act.png" class="img"></image>
+    </view>
+    <view bindtap="getUserInfo">
+      <image src="./image/my.png" class="img"></image>
+    </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='actInfo' hidden="{{open}}" bindtap="hideInfo">
+    <view class='infoHeader'>
+      <text>独墅湖邻里中心5黑</text>
+    </view>
+    <view class='infoName'>
+      <text>闹主</text><text>{{info.name}}</text>
+    </view>
+    <view class='infoName'>
+      <text>闹家等级</text><text>此人刚注册一起闹，还是条咸鱼</text>
+    </view>
+    <view class='infoAdress'>
+      <text>闹家发布地址</text><text>{{info.address}}</text>
+    </view>
+    <view class='infoContent'>
+      <text>目的</text><text>附近找几个神C一起飞,位置在独墅湖邻里中心三楼</text>
+    </view>
+    <view class='applyToNao' bindtap="applyAct">我也要参加</view>
+  </view>
+  <view class='getPhoneNumber' hidden="{{getPhoneFlag}}" bindtap="hideInfo">
+    <view class=''>
+      <text>请输入你的手机号码</text>
+      <input class='getPhoneInput' />
+      <view class='noticbtn'>赶紧通知他们吧</view>
+    </view>
   </view>
 </view>

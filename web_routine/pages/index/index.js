@@ -7,9 +7,12 @@ Page({
   data: {
     motto: '集集站',
     desc:'11111111',
+    info:{},
+    open:true,
+    getPhoneFlag: true,
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    // canIUse: wx.canIUse('button.open-type.getUserInfo'),
     markers: [],
     latitude: '',
     longitude: '',
@@ -98,10 +101,33 @@ Page({
       
       markers.push(data[j]);
     }
-    console.log(data,111111111)
+    console.log(data,i)
     that.setData({
       markers: markers
     });
+    this.getActInfo(data[i])
+  },
+  getActInfo: function(info) {
+    var that = this
+    console.log(info)
+    that.setData({
+      open:false,
+      info: info
+    })
+  },
+  hideInfo: function() {
+    var that = this
+    that.setData({
+      open: true
+    })
+  },
+  applyAct: function() {
+    if(true){
+      var that = this
+      that.setData({
+        getPhoneFlag: false
+      })
+    }
   },
   getUserInfo: function(e) {
     console.log(e)

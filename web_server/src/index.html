@@ -1,14 +1,1142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/index.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="copyright" content="huaban.com" />
+  <meta name="referrer" content="always" />
+  <title>花瓣网_陪你做生活的设计师（发现、采集你喜欢的灵感、家居、穿搭、婚礼、美食、旅行、美图、商品等）</title>
+  <link rel="apple-touch-icon" href="/img/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/touch-icon-iphone-retina.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/touch-icon-ipad-retina.png" />
+  <link rel="canonical" href="http://huaban.com/" />
+  <meta name="keywords" content="花瓣网,花瓣,图片" />
+  <meta name="description" content="花瓣网, 设计师寻找灵感的天堂！图片素材领导者，帮你采集,发现网络上你喜欢的事物.你可以用它收集灵感,保存有用的素材,计划旅行,晒晒自己想要的东西" />
+  <meta http-equiv="mobile-agent" content="format=html5;url=http://huaban.com/">
+  <link rel="stylesheet" href="/css/main.css?1531715026.css">
+  <link rel="stylesheet" href="/css/explore.css?1504678080.css">
+  <link rel="stylesheet" href="/css/new_index.css?1529029544.css">
+  <!--[if IE 6]><link rel="stylesheet" href="/css/ie6.css?1425889748.css"><![endif]-->
+  <!--[if IE 7]><link rel="stylesheet" href="/css/ie7.css?1425889748.css"><![endif]-->
+  <!--[if IE 8]><link rel="stylesheet" href="/css/ie8.css?1474974202.css"><![endif]-->
+  <script>
+    var app = app || {};
+    app["host"] = "huaban.com";
+    app["scheme"] = "http";
+    app["settings"] = {
+      "imgHosts": {
+        "muse-img": "muse-img.b0.upaiyun.com",
+        "hbimg": "hbimg.b0.upaiyun.com",
+        "hbimg_http": "img.hb.aicdn.com",
+        "hbimg-other": "hbimg-other.b0.upaiyun.com"
+      },
+      "hbfile": {
+        "hbfile": "hbfile.b0.upaiyun.com",
+        "hbimg2": "hbimg2.b0.upaiyun.com"
+      },
+      "minImageWidth": 16,
+      "categories": [{
+        "id": "web_app_icon",
+        "name": "UI/UX",
+        "col": 1,
+        "nav_link": "/favorite/web_app_icon/"
+      }, {
+        "id": "design",
+        "name": "平面",
+        "col": 1,
+        "nav_link": "/favorite/design/"
+      }, {
+        "id": "illustration",
+        "name": "插画/漫画",
+        "col": 1,
+        "nav_link": "/favorite/illustration/"
+      }, {
+        "id": "home",
+        "name": "家居/家装",
+        "col": 1,
+        "nav_link": "/favorite/home/"
+      }, {
+        "id": "apparel",
+        "name": "女装/搭配",
+        "col": 1,
+        "nav_link": "/favorite/apparel/"
+      }, {
+        "id": "men",
+        "name": "男士/风尚",
+        "col": 2,
+        "nav_link": "/favorite/men/"
+      }, {
+        "id": "wedding_events",
+        "name": "婚礼",
+        "col": 2,
+        "nav_link": "/favorite/wedding_events/"
+      }, {
+        "id": "industrial_design",
+        "name": "工业设计",
+        "col": 2,
+        "nav_link": "/favorite/industrial_design/"
+      }, {
+        "id": "photography",
+        "name": "摄影",
+        "col": 2,
+        "nav_link": "/favorite/photography/"
+      }, {
+        "id": "modeling_hair",
+        "name": "造型/美妆",
+        "nav_link": "/favorite/modeling_hair/"
+      }, {
+        "id": "food_drink",
+        "name": "美食",
+        "nav_link": "/favorite/food_drink/"
+      }, {
+        "id": "travel_places",
+        "name": "旅行",
+        "nav_link": "/favorite/travel_places/"
+      }, {
+        "id": "diy_crafts",
+        "name": "手工/布艺",
+        "nav_link": "/favorite/diy_crafts/"
+      }, {
+        "id": "fitness",
+        "name": "健身/舞蹈",
+        "nav_link": "/favorite/fitness/"
+      }, {
+        "id": "kids",
+        "name": "儿童",
+        "nav_link": "/favorite/kids/"
+      }, {
+        "id": "pets",
+        "name": "宠物",
+        "nav_link": "/favorite/pets/"
+      }, {
+        "id": "quotes",
+        "name": "美图",
+        "nav_link": "/favorite/quotes/"
+      }, {
+        "id": "people",
+        "name": "明星",
+        "nav_link": "/favorite/people/"
+      }, {
+        "id": "beauty",
+        "name": "美女",
+        "nav_link": "/favorite/beauty/"
+      }, {
+        "id": "desire",
+        "name": "礼物",
+        "nav_link": "/favorite/desire/"
+      }, {
+        "id": "geek",
+        "name": "极客",
+        "nav_link": "/favorite/geek/"
+      }, {
+        "id": "anime",
+        "name": "动漫",
+        "nav_link": "/favorite/anime/"
+      }, {
+        "id": "architecture",
+        "name": "建筑设计",
+        "nav_link": "/favorite/architecture/"
+      }, {
+        "id": "art",
+        "name": "人文艺术",
+        "nav_link": "/favorite/art/"
+      }, {
+        "id": "data_presentation",
+        "name": "数据图",
+        "nav_link": "/favorite/data_presentation/"
+      }, {
+        "id": "games",
+        "name": "游戏",
+        "nav_link": "/favorite/games/"
+      }, {
+        "id": "cars_motorcycles",
+        "name": "汽车/摩托",
+        "nav_link": "/favorite/cars_motorcycles/"
+      }, {
+        "id": "film_music_books",
+        "name": "电影/图书",
+        "nav_link": "/favorite/film_music_books/"
+      }, {
+        "id": "tips",
+        "name": "生活百科",
+        "nav_link": "/favorite/tips/"
+      }, {
+        "id": "education",
+        "name": "教育",
+        "nav_link": "/favorite/education/"
+      }, {
+        "id": "sports",
+        "name": "运动",
+        "nav_link": "/favorite/sports/"
+      }, {
+        "id": "funny",
+        "name": "搞笑",
+        "nav_link": "/favorite/funny/"
+      }],
+      "muse_categories": [{
+        "id": "ui_designer",
+        "name": "UI设计师"
+      }, {
+        "id": "designer",
+        "name": "平面设计师"
+      }, {
+        "id": "photographer",
+        "name": "摄影师"
+      }, {
+        "id": "illustrator",
+        "name": "插画师"
+      }, {
+        "id": "graphic",
+        "name": "漫画师"
+      }, {
+        "id": "animator",
+        "name": "动画师"
+      }, {
+        "id": "household_desiger",
+        "name": "家居设计师"
+      }, {
+        "id": "interior_designer",
+        "name": "室内设计师"
+      }, {
+        "id": "architect",
+        "name": "建筑设计师"
+      }, {
+        "id": "costume_designer",
+        "name": "服装设计师"
+      }, {
+        "id": "industrial_designer",
+        "name": "工业设计师"
+      }, {
+        "id": "stylist",
+        "name": "造型师"
+      }, {
+        "id": "game_designer",
+        "name": "游戏美术师"
+      }, {
+        "id": "artisan",
+        "name": "手工艺人"
+      }, {
+        "id": "other",
+        "name": "其它"
+      }],
+      "channels": [{
+        "id": "videos",
+        "name": "视频",
+        "group": 5
+      }, {
+        "id": "web_captures",
+        "name": "网页截图",
+        "group": 5
+      }, {
+        "id": "taomm",
+        "name": "淘女郎潮搭",
+        "group": 5
+      }],
+      "default_avatars": [391521, 389119, 504, 558, 4421412, 155485, 160341, 1087857, 767469, 3813778, 610, 4420875, 5437689],
+      "default_avatar_img": {
+        "bucket": "hbimg",
+        "farm": "farm1",
+        "frames": 1,
+        "height": 300,
+        "id": 102890808,
+        "key": "654953460733026a7ef6e101404055627ad51784a95c-B6OFs4",
+        "type": "image/jpeg",
+        "width": 300
+      },
+      "ios_version": "2016-04-29"
+    };
+    app["req"] = {
+      "shopping": undefined,
+      "sid": "SMoIfljm0nnDIWf6aWgyqY1GBeh.EkOwjUnymL+mvMeQ9UyskUeh+C+BBYBsqVxqajTmtHI",
+      "user": null,
+      "promotions": {
+        "dropdown": false,
+        "ctxbar_promotions": false,
+        "top": [{
+          "image": {
+            "bucket": "hbimg-other",
+            "key": "7677a1df1592f29784e3613dd759aa030bd706b81fd6b",
+            "width": 2000,
+            "height": 60
+          },
+          "title": "自个科技",
+          "url": "http://www.zigeer.com/Tshirt?from=175",
+          "new_tab": 1,
+          "enabled": 1,
+          "start_at": 1531756800,
+          "end_at": 1531929540,
+          "seq": 0
+        }, {
+          "image": {
+            "bucket": "hbimg-other",
+            "key": "190441a1b12d76e971efb10ad37f7b49203feb5bf0d7",
+            "width": "2000",
+            "height": "60"
+          },
+          "title": "live-阿努比斯",
+          "url": "http://live.huaban.com/live/65?hmsr=huaban&amp;hmpl=ads-65&amp;hmcu=top",
+          "new_tab": 1,
+          "enabled": 1,
+          "start_at": 1531756800,
+          "end_at": 1531843140,
+          "seq": 0
+        }],
+        "top_mobile": false
+      },
+      "notifications": undefined,
+      "notificationsRead": undefined,
+      "unread_messages": undefined,
+      "unread_mentions": undefined,
+      "unread_activities": undefined,
+      "unread_dm": undefined
+    };
+    app["page"] = {
+      "$url": "/"
+    };
+    app["timestamp"] = 1531799193337;
+  </script>
+  <script type="text/javascript" src="/js/modernizr.js?1461236872.js"></script>
+  <script type="text/javascript" src="/js/mootools.js?1461236872.js"></script>
+  <script type="text/javascript" src="/js/pack.js?1531476248.js"></script>
+  <script type="text/javascript" src="/js/revisions.js?1531715028.js"></script>
+  <script type="text/javascript" src="/js/views_base.js?1531476248.js"></script>
+  <!--[if lt IE 8]><script type="text/javascript" src="/js/ie6.js?1461236864.js"></script><![endif]-->
+  <script type="text/javascript" src="/js/views_dialog.js?1500375363.js"></script>
+  <script type="text/javascript" src="/js/views_dialog_box.js?1528448348.js"></script>
+  <!-- Google -->
+  <script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '/js/analytics.js', 'ga');
+    ga('create', 'UA-26735925-2', {
+      sampleRate: 1
+    });
+    ga('require', 'displayfeatures');
+    ga('create', 'UA-26735925-4', {
+      sampleRate: 1
+    }, {
+      'name': 'adsTracker'
+    });
+    ga('adsTracker.require', 'displayfeatures');
+  </script>
+  <!-- CNZZ -->
+  <script type="text/javascript">
+    var _czc = _czc || [];
+    _czc.push(["_setAccount", "1256903590"]);
+    _czc.push(["_setAutoPageview", false]);
+  </script>
+  <!-- google dfp -->
+  <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+  <script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+  </script>
+  <!-- end -->
+  <!-- 阿里图形验码 -->
+  <link type="text/css" href="//g.alicdn.com/sd/ncpc/nc.css?t=1493864912628" rel="stylesheet" />
+  <script type="text/javascript" src="//g.alicdn.com/sd/ncpc/nc.js?t=1493864912628"></script>
+  <!-- 客服接入 -->
+  <script src="https://qiyukf.com/script/6a4a332c3d7fa9a58ff19edecbd1dd89.js" defer async></script>
+  <script type="text/javascript">
+    (function() {
+      if (app && app.req && app.req.user) {
+        ga('set', 'dimension1', 'Logged-in');
+        _czc.push(['_setCustomVar', 'is-logon', 'logged-in', 1]);
+        _czc.push(['_setCustomVar', 'urlname', app.req.user.urlname, 1])
+      } else {
+        ga('set', 'dimension1', 'Logged-out');
+        _czc.push(['_setCustomVar', 'is-logon', 'logged-out', 1]);
+      }
+    })();
+    (function() {
+      var md = Cookie.read('md');
+      if (md) {
+        ga('set', 'dimension2', md);
+        _czc.push(['_setCustomVar', 'md', md, 2]);
+      }
+    })();
+  </script>
+  <script>
+    function _trackPageview() {
+      if (window._gaq_pageview_url) {
+        ga('send', 'pageview', window._gaq_pageview_url);
+        _czc.push(["_setAccount", "1256903590"]);
+        _czc.push(['_trackPageview', window._gaq_pageview_url]);
+      } else {
+        ga('set', 'location', location.href);
+        ga('send', 'pageview');
+        _czc.push(["_setAccount", "1256903590"]);
+        _czc.push(['_trackPageview', location.pathname + location.search]);
+      }
+    }
+    _trackPageview();
+  </script>
 </head>
 
 <body>
-  <h6>请安装mongodb</h6>
+  <div id="page" class="page-min-width"></div>
+  <div class="clear"></div>
+  <div id="page_overlay" style="display: none;" class="overlay"></div>
+  <div id="elevator_item" class="elevator-item"> <a id="elevator" class="off" onclick="return false;" title="回到顶部"></a> <a id="huaban-help"></a> <a class="plus"></a>
+    <div id="help-popup" class="popup-item">
+      <div class="group"> <a href="https://faq.huaban.com/" target="_blank">帮助中心<i class="faq"></i></a> <a href="/pins/53553/" rel="nofollow">用户反馈<i class="feedback"></i></a> <a id="onlineService">人工客服<i class="service"></i></a> </div>
+      <div class="arr"></div>
+    </div>
+    <div id="plus-popup" class="plus-popup popup-item">
+      <div class="group"> <a onclick="app.showUploadDialog();">添加采集<i class="upload"></i></a> <a class="add-board-item">添加画板<i class="add-board"></i></a> <a href="/about/goodies/">安装采集工具<i class="goodies"></i></a> </div>
+      <div class="arr"></div>
+    </div>
+  </div>
+  <script>
+    var app = app || {};
+    app.page = app.page || {};
+    app.page["$url"] = "/";
+    app.page["recommends"] = [{
+      "recommendation_id": 4792,
+      "status": 1,
+      "type": "users",
+      "seq": 7040,
+      "user_id": 20287942,
+      "username": "设计狮一枚",
+      "urlname": "wzdv1pujvs",
+      "created_at": 1488849064,
+      "avatar": {
+        "id": 201418162,
+        "farm": "farm1",
+        "bucket": "hbimg",
+        "key": "c734788e9cfdc04c78bbadecdb54f029a69e8be618dc9-Uqdhil",
+        "type": "image/jpeg",
+        "width": 640,
+        "height": 640,
+        "frames": 1
+      },
+      "pin_count": 9598,
+      "follow_count": 215,
+      "target_id": 20287942,
+      "title": "设计狮一枚",
+      "url": "http://huaban.com/wzdv1pujvs",
+      "cover": {}
+    }, {
+      "recommendation_id": 4791,
+      "status": 1,
+      "type": "boards",
+      "seq": 55,
+      "board_id": 42212780,
+      "user_id": 21585775,
+      "title": "BEAUTY｜ 奥黛丽赫本1929",
+      "description": "Annex - Hepburn \n天使在人间",
+      "category_id": "beauty",
+      "pin_count": 217,
+      "follow_count": 485,
+      "like_count": 15,
+      "created_at": 1517819948,
+      "updated_at": 1522811957,
+      "deleting": 0,
+      "is_private": 0,
+      "user": {
+        "username": "徐遮月",
+        "urlname": "tuki",
+        "pin_count": 11160,
+        "follow_count": 56122,
+        "user_id": 21585775
+      },
+      "target_id": 42212780,
+      "url": "https://huaban.com/boards/42212780/",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "716e90c30a2f108b9cf9c2dbfd0181de8e523c6e1726c-VdQlcc"
+      }
+    }, {
+      "recommendation_id": 4790,
+      "status": 1,
+      "type": "boards",
+      "seq": 145,
+      "board_id": 35221715,
+      "user_id": 929784,
+      "title": "Z_杂志/排版/样式",
+      "description": "",
+      "category_id": "design",
+      "pin_count": 1056,
+      "follow_count": 1598,
+      "like_count": 60,
+      "created_at": 1489911127,
+      "updated_at": 1526946749,
+      "deleting": 0,
+      "is_private": 0,
+      "user": {
+        "username": "Kindly丶",
+        "urlname": "jianhaixiao0816",
+        "pin_count": 22909,
+        "follow_count": 7837,
+        "user_id": 929784
+      },
+      "target_id": 35221715,
+      "url": "http://huaban.com/boards/35221715/",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "c12595c2ff4a91d37528814390ab9a1bc780bf0bb41a-P74Qbb"
+      }
+    }, {
+      "recommendation_id": 3983,
+      "status": 1,
+      "type": "boards",
+      "seq": 65,
+      "board_id": 18932214,
+      "user_id": 16707347,
+      "title": "眷侣",
+      "description": "乐鸳鸯之同池，羡比翼之共林。愿为晨风鸟，双飞翔北林。",
+      "category_id": "pets",
+      "pin_count": 76,
+      "follow_count": 230,
+      "like_count": 5,
+      "created_at": 1419899762,
+      "updated_at": 1428967219,
+      "deleting": 0,
+      "is_private": 0,
+      "user": {
+        "username": "-flower-",
+        "urlname": "flower-",
+        "pin_count": 25924,
+        "follow_count": 1765,
+        "user_id": 16707347
+      },
+      "target_id": 18932214,
+      "url": "http://huaban.com/boards/18932214/",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "39cec6b74ef75efc2c5ab9ad5199225c8adff8d88a33-fZzGF7"
+      }
+    }, {
+      "recommendation_id": 646,
+      "status": 1,
+      "type": "explores",
+      "seq": 7036,
+      "keyword_id": 1044,
+      "name": "咖啡拉花",
+      "urlname": "coffeegarland",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "f008fcd642656177a6f6a23aea2ca2680602f35ebe2b-1lYD8p"
+      },
+      "description": "咖啡拉花不仅仅从视觉上创造欣喜，也是为了在牛奶的绵密口感和融合技巧上不断改进，以调制一杯色、香、味俱佳的咖啡。不过看到如此漂亮的咖啡泡沫，你还舍得喝吗？",
+      "recommended_users": null,
+      "creator_id": null,
+      "created_at": 1422930926,
+      "tags": {
+        "must": ["摄影"],
+        "should": ["咖啡拉花"]
+      },
+      "follow_count": 1381,
+      "target_id": 1044,
+      "title": "咖啡拉花",
+      "url": "http://huaban.com/explore/coffeegarland/"
+    }, {
+      "recommendation_id": 3916,
+      "status": 1,
+      "type": "users",
+      "seq": 7035,
+      "user_id": 10155999,
+      "username": "希格_果果",
+      "urlname": "p925326803",
+      "created_at": 1381382558,
+      "avatar": {
+        "id": 181416407,
+        "farm": "farm1",
+        "bucket": "hbimg",
+        "key": "c8672e41e8ee079c38aecd2be4dac29b453dfe094081-Bp7dT1",
+        "type": "image/png",
+        "width": 168,
+        "height": 187,
+        "frames": 1
+      },
+      "pin_count": 14108,
+      "follow_count": 861,
+      "target_id": 10155999,
+      "title": "希格_果果",
+      "url": "http://huaban.com/p925326803/",
+      "cover": {}
+    }, {
+      "recommendation_id": 3917,
+      "status": 1,
+      "type": "users",
+      "seq": 7034,
+      "user_id": 20563536,
+      "username": "ART_HAHA",
+      "urlname": "arthaha",
+      "created_at": 1491980268,
+      "avatar": {
+        "id": 201639361,
+        "farm": "farm1",
+        "bucket": "hbimg",
+        "key": "70f7defea79271e3bfdbcf2622581fd85d23541f195-wVKrVr",
+        "type": "image/png",
+        "width": 32,
+        "height": 32,
+        "frames": 1
+      },
+      "pin_count": 14414,
+      "follow_count": 510,
+      "target_id": 20563536,
+      "title": "ART_HAHA",
+      "url": "http://huaban.com/arthaha",
+      "cover": {}
+    }, {
+      "recommendation_id": 3925,
+      "status": 1,
+      "type": "boards",
+      "seq": 198,
+      "board_id": 38090627,
+      "user_id": 16822204,
+      "title": "◎脑洞大开的创意合成◎",
+      "description": "",
+      "category_id": "design",
+      "pin_count": 341,
+      "follow_count": 1752,
+      "like_count": 106,
+      "created_at": 1500620829,
+      "updated_at": 1524713576,
+      "deleting": 0,
+      "is_private": 0,
+      "user": {
+        "username": "SUKEKUN",
+        "urlname": "gwzpz",
+        "pin_count": 7650,
+        "follow_count": 4484,
+        "user_id": 16822204
+      },
+      "target_id": 38090627,
+      "url": "http://huaban.com/boards/38090627/",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "90bfe6776f95ec714d2e2af7aca975db17c39f24102bb-zu5KU7"
+      }
+    }, {
+      "recommendation_id": 3920,
+      "status": 1,
+      "type": "boards",
+      "seq": 30,
+      "board_id": 37480769,
+      "user_id": 19686320,
+      "title": "MORAE SHINMORA",
+      "description": "shinmorae_ ",
+      "category_id": "illustration",
+      "pin_count": 116,
+      "follow_count": 2281,
+      "like_count": 204,
+      "created_at": 1498181497,
+      "updated_at": 1498195205,
+      "deleting": 0,
+      "is_private": 0,
+      "user": {
+        "username": "XIXXII",
+        "urlname": "u8x2civlurm",
+        "pin_count": 6970,
+        "follow_count": 3319,
+        "user_id": 19686320
+      },
+      "target_id": 37480769,
+      "url": "http://huaban.com/boards/37480769/",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "4677407e5d3a23780a5800739452be20360f589a7dda-nbz4us"
+      }
+    }, {
+      "recommendation_id": 3930,
+      "status": 1,
+      "type": "explores",
+      "seq": 7031,
+      "keyword_id": 191,
+      "name": "逆光摄影",
+      "urlname": "jianyingsheying",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "cb50bf83d3e3f46a694032907f087fd7f27c71426ce01-cdLyOI"
+      },
+      "description": "剪影摄影是一种有趣而特殊的摄影艺术形式，它用夜晚或早晨的天空，衬托出这张图片的神秘和美感，偶尔尝试下说不定能让人惊艳哦。",
+      "recommended_users": null,
+      "creator_id": null,
+      "created_at": 1447310748,
+      "tags": {
+        "must": ["摄影"],
+        "should": ["逆光"]
+      },
+      "follow_count": 10797,
+      "target_id": 191,
+      "title": "逆光摄影",
+      "url": "http://huaban.com/explore/jianyingsheying/"
+    }, {
+      "recommendation_id": 3941,
+      "status": 1,
+      "type": "boards",
+      "seq": 15,
+      "board_id": 190280,
+      "user_id": 10107,
+      "title": "有什么比你更美",
+      "description": "",
+      "category_id": "kids",
+      "pin_count": 381,
+      "follow_count": 110389,
+      "like_count": 43,
+      "created_at": 1327893251,
+      "updated_at": 1402648904,
+      "deleting": 0,
+      "is_private": 0,
+      "user": {
+        "username": "志明与春娇",
+        "urlname": "zmcjlove",
+        "pin_count": 3436,
+        "follow_count": 209321,
+        "user_id": 10107
+      },
+      "target_id": 190280,
+      "url": "http://huaban.com/boards/190280/",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "3aedbb1a03c5abf682548d4e908442b7e445bf66b990-RyKUyo"
+      }
+    }, {
+      "recommendation_id": 3947,
+      "status": 1,
+      "type": "explores",
+      "seq": 7028,
+      "keyword_id": 1757,
+      "name": "迪丽热巴",
+      "urlname": "dilireba",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "9a05ddaad59285c9475bf80f79f91f0f1519b2ca7c9c6-BT7UkZ"
+      },
+      "description": "迪丽热巴（Dilraba），1992年6月3日出生于新疆乌鲁木齐，中国内地女演员，毕业于上海戏剧学院。",
+      "recommended_users": null,
+      "creator_id": null,
+      "created_at": 1491878254,
+      "tags": {
+        "must": ["明星"],
+        "should": ["迪丽热巴"]
+      },
+      "follow_count": 697,
+      "target_id": 1757,
+      "title": "迪丽热巴",
+      "url": "http://huaban.com/explore/dilireba"
+    }, {
+      "recommendation_id": 3948,
+      "status": 1,
+      "type": "explores",
+      "seq": 7027,
+      "keyword_id": 1769,
+      "name": "室内设计",
+      "urlname": "shineisheji",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "f2d4f1f6e91387344cda1e10be5d476a977a6f8179a9f-wbbQZv"
+      },
+      "description": null,
+      "recommended_users": null,
+      "creator_id": null,
+      "created_at": 1499760226,
+      "tags": {
+        "must": [],
+        "should": []
+      },
+      "follow_count": 446,
+      "target_id": 1769,
+      "title": "室内设计",
+      "url": "http://huaban.com/explore/shineisheji"
+    }, {
+      "recommendation_id": 3949,
+      "status": 1,
+      "type": "explores",
+      "seq": 7026,
+      "keyword_id": 1813,
+      "name": "C4D视觉设计",
+      "urlname": "c4dshijuesheji",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "3c2c587be0b34595e49ad12ac3a2618c7a68e880fb7c-NC8jNv"
+      },
+      "description": null,
+      "recommended_users": null,
+      "creator_id": null,
+      "created_at": 1501150343,
+      "tags": {
+        "must": ["C4D"],
+        "should": []
+      },
+      "follow_count": 1521,
+      "target_id": 1813,
+      "title": "C4D视觉设计",
+      "url": "http://huaban.com/explore/c4dshijuesheji"
+    }, {
+      "recommendation_id": 3950,
+      "status": 1,
+      "type": "explores",
+      "seq": 7025,
+      "keyword_id": 1829,
+      "name": "街边小店",
+      "urlname": "jiebianxiaodian",
+      "cover": {
+        "bucket": "hbimg",
+        "key": "48ab0f339689217245d7f474854437a2aad4368e122a5-hXRbgT"
+      },
+      "description": null,
+      "recommended_users": null,
+      "creator_id": null,
+      "created_at": 1501746579,
+      "tags": {
+        "must": [],
+        "should": []
+      },
+      "follow_count": 1892,
+      "target_id": 1829,
+      "title": "街边那些小店",
+      "url": "http://huaban.com/explore/jiebianxiaodian"
+    }];
+    app.page["explores"] = [{
+      "cover": {
+        "bucket": "hbimg",
+        "key": "ee5e971ee19e0a8d22d0edf849a41d88c2a2d6f71db1d1-lfyZDr"
+      },
+      "explore_id": 1721,
+      "name": "旅行风景",
+      "urlname": "lvxingfengjing",
+      "start_at": 1531712580,
+      "end_at": 1532317380,
+      "theme": "003b47"
+    }, {
+      "cover": {
+        "bucket": "hbimg",
+        "key": "43814a240c9b6814a5dd1dc65ed7849ca46252f87ad00-paXBl9"
+      },
+      "explore_id": 1970,
+      "name": "雪糕",
+      "urlname": "ice-sucker",
+      "start_at": 1531712580,
+      "end_at": 1532317380,
+      "theme": "0e0e0e"
+    }, {
+      "cover": {
+        "bucket": "hbimg",
+        "key": "f7181383b0b6b3a7d91def12c64c3cd5e584d1f8530f3-NnMhzJ"
+      },
+      "explore_id": 233,
+      "name": "水下摄影",
+      "urlname": "shuixiasheying",
+      "start_at": 1531712580,
+      "end_at": 1532317380,
+      "theme": "e9e9e9"
+    }, {
+      "cover": {
+        "bucket": "hbimg",
+        "key": "59d553d3fd326e5f5e62b5c9cfb80dddc608bebdad75d-7btQAQ"
+      },
+      "explore_id": 261,
+      "name": "产品设计",
+      "urlname": "chanpinsheji",
+      "start_at": 1531712580,
+      "end_at": 1532317380,
+      "theme": "cccccc"
+    }, {
+      "cover": {
+        "bucket": "hbimg",
+        "key": "fd9a96c24090103268d62a823080fb69e27e3f2233136-GcQJUI"
+      },
+      "explore_id": 283,
+      "name": "婚戒",
+      "urlname": "hunjie",
+      "start_at": 1531712520,
+      "end_at": 1532317320,
+      "theme": "ffbfb3"
+    }, {
+      "cover": {
+        "bucket": "hbimg",
+        "key": "72181dbc78c7e1fe825826cab78643da13b0b6bb2e383-LKnHA2"
+      },
+      "explore_id": 58,
+      "name": "中式风格家居",
+      "urlname": "zhongshifengge",
+      "start_at": 1531712520,
+      "end_at": 1532317320,
+      "theme": "151515"
+    }, {
+      "cover": {
+        "bucket": "hbimg",
+        "key": "40838e6111540cf3727934620e7a4bc08ffd1bb06eb92-HVtqrq"
+      },
+      "explore_id": 248,
+      "name": "风景插画",
+      "urlname": "fengjingchahua",
+      "start_at": 1531712460,
+      "end_at": 1532317260,
+      "theme": "f1f1f1"
+    }];
+    app.page["hot_words"] = [{
+      "start_at": 1527234660,
+      "end_at": 1559375460,
+      "name": "创意合成",
+      "url": "http://huaban.com/explore/chuangyihecheng"
+    }, {
+      "start_at": 1527234600,
+      "end_at": 1559375400,
+      "name": "动漫场景",
+      "url": "http://huaban.com/explore/dongmanbeijing"
+    }, {
+      "start_at": 1527234600,
+      "end_at": 1559375400,
+      "name": "科技背景",
+      "url": "http://huaban.com/explore/kejibeijing"
+    }, {
+      "start_at": 1527234540,
+      "end_at": 1559375340,
+      "name": "世界杯",
+      "url": "http://huaban.com/explore/shijiebei"
+    }, {
+      "start_at": 1490078100,
+      "end_at": 1553409300,
+      "name": "壁纸那些事",
+      "url": "http://huaban.com/boards/35237897/"
+    }];
+    app.page["banners"] = [{
+      "cover": {
+        "bucket": "hbfile",
+        "key": "ae1b2a5b8e939b936072ea75a75479734860a20eea073",
+        "path": "/img/home/banner/"
+      },
+      "user": {
+        "username": "熊熊妹Yui",
+        "user_id": 13823587,
+        "urlname": "xiongxiongmeiyui"
+      },
+      "pin_id": "354603658",
+      "user_id": 13823587,
+      "start_at": 1531366800,
+      "end_at": 1563507600
+    }, {
+      "cover": {
+        "bucket": "hbfile",
+        "key": "632a0d9115b1373944b51cc6c68f27f5348fa52fc447e",
+        "path": "/img/home/banner/"
+      },
+      "user": {
+        "username": "雪魚",
+        "user_id": 14662331,
+        "urlname": "xueyu"
+      },
+      "pin_id": "374517789",
+      "user_id": 14662331,
+      "start_at": 1531366800,
+      "end_at": 1563507600
+    }, {
+      "cover": {
+        "bucket": "hbfile",
+        "key": "1dc63d4edec4996871a44f5d7e8c9cde361d53989b246",
+        "path": "/img/home/banner/"
+      },
+      "user": {
+        "username": "雪魚",
+        "user_id": 14662331,
+        "urlname": "xueyu"
+      },
+      "pin_id": "374509500",
+      "user_id": 14662331,
+      "start_at": 1531366740,
+      "end_at": 1563507540
+    }, {
+      "cover": {
+        "bucket": "hbfile",
+        "key": "cdf0a6ab627bc33af759533af558a118be5a1b1dd2d93",
+        "path": "/img/home/banner/"
+      },
+      "user": {
+        "username": "叉烧君",
+        "user_id": 9603782,
+        "urlname": "wingwei2010"
+      },
+      "pin_id": "571559422",
+      "user_id": 9603782,
+      "start_at": 1531366680,
+      "end_at": 1563507480
+    }, {
+      "cover": {
+        "bucket": "hbfile",
+        "key": "1bc004d49cb173857cf75507141a33a0070e7a831040a6",
+        "path": "/img/home/banner/"
+      },
+      "user": {
+        "username": "Ciao大榴莲！",
+        "user_id": 12674444,
+        "urlname": "jt646518737"
+      },
+      "pin_id": "1601269366",
+      "user_id": 12674444,
+      "start_at": 1531366140,
+      "end_at": 1563506940
+    }];
+    app.page["bannerExploreProms"] = [{
+      "image": {
+        "bucket": "hbimg-other",
+        "key": "7aa8ff7df325ef3ee962d9636cb33f8471b1b2be1f85b",
+        "width": 472,
+        "height": 340
+      },
+      "title": "美素",
+      "url": "http://www.meisupic.com/activity.php?id=34",
+      "new_tab": 1,
+      "enabled": 1,
+      "start_at": 1531411200,
+      "end_at": 1533052740,
+      "seq": 0,
+      "pos": 4
+    }, {
+      "image": {
+        "bucket": "hbimg-other",
+        "key": "82381eaca0f93ea6c368726095914bc96d5d10aa80c2",
+        "width": "236",
+        "height": "170"
+      },
+      "title": "花瓣网问卷",
+      "url": "https://wj.qq.com/s/2160584/beec",
+      "new_tab": 1,
+      "enabled": 1,
+      "start_at": 1531756800,
+      "end_at": 1533052740,
+      "seq": 0,
+      "pos": 1
+    }, {
+      "image": {
+        "bucket": "hbimg-other",
+        "key": "63ac411b11fff122f076015864138e358df9eb4a1fa12",
+        "width": 472,
+        "height": 340
+      },
+      "title": "美啊",
+      "url": "https://ixdc.org/2018/join#app",
+      "new_tab": 1,
+      "enabled": 1,
+      "start_at": 1526525700,
+      "end_at": 1577807940,
+      "seq": 0,
+      "pos": 3
+    }, {
+      "image": {
+        "bucket": "hbimg-other",
+        "key": "9bb2fc8d8cd04e4b99a8142db42f1c98e870e6d514c1c",
+        "width": 472,
+        "height": 340
+      },
+      "title": "美思",
+      "url": "https://muse.huaban.com/subject/Poster-design",
+      "new_tab": 1,
+      "enabled": 1,
+      "start_at": 1518278400,
+      "end_at": 1546271940,
+      "seq": 0,
+      "pos": 2
+    }];
+    app._csr = true;
+    var view = app.view = $("page").hide();
+
+    app.render("base/new_index", view, function(code, html) {
+      view.show();
+    });
+  </script>
+  <script type="text/javascript">
+    var indexFooter = document.querySelectorAll('.column.follow-us')[0];
+    var huabanSecurityOAuth = document.querySelectorAll('.huaban_security_oauth')[0];
+    if (indexFooter && huabanSecurityOAuth) indexFooter.appendChild(huabanSecurityOAuth);
+  </script>
+  <!-- Start Alexa Certify Javascript -->
+  <script type="text/javascript">
+    _atrk_opts = {
+      atrk_acct: "7I54i1acVE00Uu",
+      domain: "huaban.com",
+      dynamic: true
+    };
+    (function() {
+      var as = document.createElement('script');
+      as.type = 'text/javascript';
+      as.async = true;
+      as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js";
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(as, s);
+    })();
+  </script> <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=7I54i1acVE00Uu" style="display:none" height="1" width="1" alt="" /></noscript>
+  <!-- End Alexa Certify Javascript -->
+  <script>
+    (function() {
+      if (app && app.pushToBaidu) {
+        app.pushToBaidu();
+      }
+    })();
+  </script>
+  <div id="baidu_search_promotion" style="display: none;">
+    <script>
+      var cpro_id = "u2386628";
+      (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {
+        at: "3",
+        rsi0: "200",
+        rsi1: "200",
+        pat: "17",
+        tn: "baiduCustNativeAD",
+        rss1: "#FFFFFF",
+        conBW: "1",
+        adp: "1",
+        ptt: "0",
+        titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",
+        titFS: "",
+        rss2: "#000000",
+        titSU: "0"
+      }
+    </script>
+    <script src="//cpro.baidustatic.com/cpro/ui/c.js"></script>
+  </div>
+  <div id="baidu_view_promotion" style="display: none;">
+    <script>
+      var cpro_id = "u2386701";
+      (window["cproStyleApi"] = window["cproStyleApi"] || {})[cpro_id] = {
+        at: "3",
+        rsi0: "200",
+        rsi1: "200",
+        pat: "17",
+        tn: "baiduCustNativeAD",
+        rss1: "#FFFFFF",
+        conBW: "1",
+        adp: "1",
+        ptt: "0",
+        titFF: "%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91",
+        titFS: "",
+        rss2: "#000000",
+        titSU: "0"
+      }
+    </script>
+    <script src="//cpro.baidustatic.com/cpro/ui/c.js"></script>
+  </div>
+  <script type="text/javascript">
+    var baiduImagePlus = {
+      imgContainerId: 'baidu_image_holder',
+      noLogo: true,
+      unionId: 'u2727970',
+      formList: [{
+        formId: 16
+      }]
+    };
+  </script>
+  <script src="//cpro.baidustatic.com/cpro/ui/i.js"></script>
+  </div>
+  <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan style='display: none;' id='cnzz_stat_icon_1256903590'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256903590' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <!-- 阿里验证码必要的锚点块 -->
+  <div id="_umfp" style="display:inline;width:1px;height:1px;overflow:hidden"></div>
 </body>
 
 </html>

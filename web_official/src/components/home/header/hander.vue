@@ -31,7 +31,7 @@ export default {
 </script>
 <style scoped>
 .hander {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   height: 50px;
@@ -39,6 +39,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: rgba(58, 137, 0, 0.6);
 }
 .hander ul {
   width: 300px;

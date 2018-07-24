@@ -64,7 +64,7 @@ export default {
 .infoList {
   background: rgba(0, 0, 0, 0.7);
   left: 0;
-  top: 0;
+  top: 50px;
   bottom: 0;
   right: 0;
   position: fixed;

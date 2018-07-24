@@ -1,12 +1,7 @@
 <template>
   <section>
     <VHeader></VHeader>
-    <div class="content">
-
-    </div>
-    <div class="footer">
-
-    </div>
+    <VUser></VUser>
   </section>
 </template>
 
@@ -16,7 +11,10 @@ export default {
   components: {
     VHeader (resolve) {
       require(['./header/index'], resolve)
-    }
+    },
+    VUser (resolve) {
+      require(['../user/index'], resolve)
+    },
   },
   data () {
     return {

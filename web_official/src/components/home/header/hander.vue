@@ -11,7 +11,7 @@
         <div class="login_bt">
           登录
         </div>
-        <div class="regist_bt">
+        <div class="regist_bt" @click="showMeRegist">
           注册
         </div>
       </div>
@@ -26,6 +26,11 @@ export default {
     return {
       msg: ''
     }
+  },
+  methods: {
+    showMeRegist () {
+
+    }
   }
 }
 </script>
@@ -36,6 +41,7 @@ export default {
   right: 0;
   height: 50px;
   top: 0;
+  z-index: 9;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

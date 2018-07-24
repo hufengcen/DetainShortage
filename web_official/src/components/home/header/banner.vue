@@ -4,7 +4,7 @@
       <!-- <img src="//hbfile.b0.upaiyun.com/img/home/banner/cdf0a6ab627bc33af759533af558a118be5a1b1dd2d93" alt=""> -->
       <!-- <iframe src="https://map.baidu.com/" width="100%" height="800"></iframe> -->
     </div>
-    <VInfoList></VInfoList>
+    <VInfoList :disWindowFlag="disWindowFlag" @changeProp="changeProp"></VInfoList>
   </section>
 </template>
 
@@ -19,7 +19,8 @@ export default {
   },
   data () {
     return {
-      map: null
+      map: null,
+      disWindowFlag: true
     }
   },
   created () {
@@ -29,11 +30,11 @@ export default {
     mapInit () {
       let map = this.map = new AMap.Map('map_container', {
         resizeEnable: true,
-        zoom: 5,  //设置地图显示的缩放级别
+        zoom: 5, // 设置地图显示的缩放级别
         // layers: [new AMap.TileLayer.Satellite()],  //设置图层,可设置成包含一个或多个图层的数组
         // mapStyle: 'amap://styles/whitesmoke',  //设置地图的显示样式
-        viewMode: '2D',  //设置地图模式
-        lang:'zh_cn',  //设置地图语言类型
+        viewMode: '2D', // 设置地图模式
+        lang: 'zh_cn', // 设置地图语言类型
       })
       map.plugin('AMap.Geolocation', function () {
         var geolocation = new AMap.Geolocation({
@@ -68,14 +69,17 @@ export default {
         title: '苏州',
         content: '<div class="map_marker"><img src="http://img.hb.aicdn.com/16af5bfcd0f50f7d59e7ccb263f93ec755828b41644aa-CpjD4d_sq320"/></div>'
       })
-      AMap.event.addListener(marker, "click", function(e) {
-  			alert('你准备查看当前信息')
-  		})
+      AMap.event.addListener(marker, 'click', function (e) {
+        this.disWindowFlag = false
+      }.bind(this))
       this.map.add(marker)
       this.map.setFitView()
     },
     search () {
 
+    },
+    changeProp () {
+      this.disWindowFlag = true
     }
   },
   mounted () {

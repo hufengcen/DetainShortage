@@ -5,14 +5,14 @@
     <div class="modal">
       <p>请输入手机号码</p>
       <div class="">
-        <input type="text" name="" value="">
+        <input type="text" name="" v-model="phoneNumber">
       </div>
       <p>点击获取验证码</p>
       <div class="">
-        <input type="text" name="" value="">
+        <input type="text" name="" v-model="icode">
       </div>
       <div class="handles">
-        <div class="registLogin">
+        <div class="registLogin" @click="registLogin">
           注册并登录
         </div>
         <div class="refuse" @click="disRegistModal">
@@ -42,12 +42,26 @@ export default {
   },
   data () {
     return {
-      msg: '',
+      phoneNumber: '',
+      icode: ''
     }
   },
   methods: {
     disRegistModal () {
       this.$emit('showMeRegist', false)
+    },
+    registLogin () {
+      if (!this.phoneNumber || !this.icode) {
+        return
+      }
+      let param = {
+        phoneNumber: this.phoneNumber,
+        icode: this.icode,
+      }
+      console.log(param);
+      this.$ajaxApi.registLogin(param).then((res) => {
+
+      })
     }
   }
 }

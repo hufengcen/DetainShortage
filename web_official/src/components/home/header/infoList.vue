@@ -43,7 +43,7 @@ export default {
     disWindowFlag: {
       default: true,
       type: Boolean
-    },
+    }
   },
   created () {
 

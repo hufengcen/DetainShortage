@@ -75,6 +75,7 @@ export default {
   border-radius: 2px;
   background: #ec414d;
   margin-left: 10px;
+  cursor: pointer;
 }
 .user_hander .login_bt{
   color: rgba(255, 255, 255, .85);
@@ -83,7 +84,8 @@ export default {
   line-height: 32px;
   border-radius: 2px;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, .85)
+  border: 1px solid rgba(255, 255, 255, .85);
+  cursor: pointer;
 }
 
 </style>

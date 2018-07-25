@@ -9,12 +9,14 @@
           <p class="p3">{{user.desc}}</p>
         </div>
       </div>
-      <p>发布活动</p>
+      <p @click="publishAct">发布活动</p>
       <p>正在参与</p>
       <p>附近商家</p>
-      <p>编辑信息</p>
+      <p>邀请好友</p>
+      <p :class="tipShow ? 'tip_border' : ''" @click="showEdit">编辑信息</p>
       <p>权限设置</p>
     </div>
+    <VEdit></VEdit>
   </section>
 </template>
 
@@ -22,7 +24,9 @@
 export default {
   name: 'index',
   components: {
-
+    // VEdit (resolve) {
+    //   require(['./edit'], resolve)
+    // }
   },
   props : {
     actShow: {
@@ -34,14 +38,29 @@ export default {
     return {
       user: {
         nick_name: '飞天小猪',
-        grade: 100,
+        grade: 1,
         desc: '老夫专干生产队塘，就是一把嗦',
         skill: '钓鱼达人'
-      }
+      },
+      tipShow: false
     }
   },
   methods: {
+    publishAct () {
+      if (this.user.grade < 10) {
+        alert('你的等级不够哦，快去补充个人信息，或者参与活动去提升等级吧')
+        this.tipShow = true
+        return
+      } else {
 
+      }
+    },
+    showEdit() {
+      this.hideTip()
+    },
+    hideTip () {
+      this.tipShow = false
+    }
   }
 }
 </script>
@@ -56,6 +75,8 @@ export default {
   top: 50px;
   right: 0;
   color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .mask .personal{
   display: flex;
@@ -83,8 +104,13 @@ export default {
   height: 50px;
   line-height: 50px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .mask >p:hover {
   background: rgba(255, 255, 255, .2)
+}
+.mask .tip_border{
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 5px 1px #fff;
 }
 </style>

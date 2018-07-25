@@ -38,7 +38,7 @@ let UserType = new GraphQLObjectType({
 })
 
 
-export const User = {
+export const user = {
   type: new GraphQLList(UserType),
   args: {},
   resolve (root, params, options) {

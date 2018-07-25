@@ -5,11 +5,11 @@
     <div class="modal">
       <p>请输入手机号码</p>
       <div class="">
-        <input type="text" name="" v-model="phoneNumber">
+        <input type="text" name="" v-model="phoneNumber" :class="phoneFlag ? (phoneFocusFlag ? 'focus' : '') : 'error'" @focus="focus('phone')">
       </div>
       <p>点击获取验证码</p>
       <div class="">
-        <input type="text" name="" v-model="icode">
+        <input type="text" name="" v-model="icode" :class="icodeFlag ? (icodeFocusFlag ? 'focus' : '') : 'error'" @focus="focus('icode')">
       </div>
       <div class="handles">
         <div class="registLogin" @click="registLogin">
@@ -43,7 +43,11 @@ export default {
   data () {
     return {
       phoneNumber: '',
-      icode: ''
+      icode: '',
+      phoneFlag: true,
+      icodeFlag: true,
+      phoneFocusFlag: false,
+      icodeFocusFlag: false
     }
   },
   methods: {
@@ -51,17 +55,43 @@ export default {
       this.$emit('showMeRegist', false)
     },
     registLogin () {
-      if (!this.phoneNumber || !this.icode) {
+      //本地校验手机号 验证码
+      if (this.phoneNumber.match(/^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/) === null) {
+        this.phoneFlag = false
+      } else {
+        this.phoneFlag = true
+      }
+      if (this.icode.match(/^([0-9])\d{5}$/) === null) {
+        this.icodeFlag = false
+      } else {
+        this.icodeFlag = true
+      }
+      if (!this.icodeFlag || !this.phoneFlag) {
         return
       }
+      this.phoneFocusFlag = this.icodeFocusFlag = false
       let param = {
         phoneNumber: this.phoneNumber,
         icode: this.icode,
       }
-      console.log(param);
       this.$ajaxApi.registLogin(param).then((res) => {
-
+        if (res.data.success) {
+          console.log(res.data);
+          this.$emit('showMeRegist', false)
+          window.sessionStorage.setItem('userInfo', JSON.stringify(res.data.user))
+        }
       })
+    },
+    focus (key) {
+      if (key === 'phone') {
+        this.phoneFocusFlag = true
+        this.icodeFocusFlag = false
+        this.phoneFlag = true
+      } else {
+        this.icodeFocusFlag = true
+        this.phoneFocusFlag = false
+        this.icodeFlag = true
+      }
     }
   }
 }
@@ -103,6 +133,17 @@ export default {
   font-size: 22px;
   padding-left: 10px;
   border: 0;
+  box-sizing: border-box;
+}
+
+.modal .error {
+  border: 1px solid red;
+  box-shadow: 0px 0px 5px 1px red;
+}
+
+.modal .focus {
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 5px 1px #fff;
 }
 .modal p {
   width: 320px;

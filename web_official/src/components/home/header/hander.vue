@@ -3,17 +3,18 @@
     <div class="hander">
       <ul>
         <li>首页</li>
-        <li>发现</li>
-        <li>最新</li>
-        <li>活动</li>
       </ul>
-      <div class="user_hander">
+      <div class="user_hander" v-if="!user">
         <div class="login_bt">
           登录
         </div>
         <div class="regist_bt" @click="showMeRegist">
           注册
         </div>
+      </div>
+      <div class="user_info" v-if="user" @click="showHideAct">
+        <img src="http://img.hb.aicdn.com/cfec3ffb205218a17f3ca12f01ad37bb6e859ef47b94-WQhAzm_sq320" alt="">
+        <span>{{user.phoneNumber}}</span>
       </div>
     </div>
   </section>
@@ -24,12 +25,18 @@ export default {
   name: 'hander',
   data () {
     return {
-      msg: ''
+      user: null
     }
+  },
+  created () {
+    this.user = JSON.parse(window.sessionStorage.getItem('userInfo'))
   },
   methods: {
     showMeRegist () {
       this.$emit('showMeRegist', true)
+    },
+    showHideAct () {
+      this.$emit('showHideAct')
     }
   }
 }
@@ -86,6 +93,22 @@ export default {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, .85);
   cursor: pointer;
+}
+
+.user_info {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgba(255, 255, 255, .85);
+  font-size: 18px;
+  cursor: pointer
+}
+.user_info img{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  margin-right: 10px
 }
 
 </style>

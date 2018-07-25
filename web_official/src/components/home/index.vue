@@ -1,7 +1,8 @@
 <template>
   <section>
-    <VHeader @showMeRegist="showMeRegist"></VHeader>
+    <VHeader @showMeRegist="showMeRegist" @showHideAct="showHideAct"></VHeader>
     <VUser :refuse="refuse" @showMeRegist="showMeRegist"></VUser>
+    <VAct :actShow="actShow"></VAct>
   </section>
 </template>
 
@@ -15,15 +16,22 @@ export default {
     VUser (resolve) {
       require(['../user/index'], resolve)
     },
+    VAct (resolve) {
+      require(['./act/index'], resolve)
+    }
   },
   data () {
     return {
-      refuse: false
+      refuse: false,
+      actShow: false
     }
   },
   methods: {
     showMeRegist (flag) {
       this.refuse = flag
+    },
+    showHideAct () {
+      this.actShow = !this.actShow
     }
   }
 }

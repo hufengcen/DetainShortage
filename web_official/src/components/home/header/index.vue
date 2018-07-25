@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="header">
-      <VHander @showMeRegist="showMeRegist"></VHander>
+      <VHander @showMeRegist="showMeRegist" @showHideAct="showHideAct"></VHander>
       <VBanner></VBanner>
     </div>
   </section>
@@ -26,6 +26,9 @@ export default {
   methods: {
     showMeRegist (flag) {
       this.$emit('showMeRegist', flag)
+    },
+    showHideAct () {
+      this.$emit('showHideAct')
     }
   }
 }

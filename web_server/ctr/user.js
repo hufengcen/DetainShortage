@@ -1,18 +1,18 @@
 import mongoose from 'mongoose'
-const Student = mongoose.model('Student')
+const User = mongoose.model('User')
 
 // 保存学生数据的方法
-export const saveStudent = async (ctx, next) => {
+export const saveUser = async (ctx, next) => {
   // 获取前端请求的数据
   const opts = ctx.request.body
 
-  const student = new Student(opts)
-  const saveStudent = await student.save() // 保存数据
+  const user = new User(opts)
+  const saveUser = await user.save() // 保存数据
 
-  if (saveStudent) {
+  if (saveUser) {
     ctx.body = {
       success: true,
-      student: saveStudent
+      user: saveUser
     }
   } else {
     ctx.body = {
@@ -22,13 +22,13 @@ export const saveStudent = async (ctx, next) => {
 }
 
 // 查询所有学生的数据
-export const fetchStudent = async (ctx, next) => {
-  const students = await Student.find({})
+export const fetchUser = async (ctx, next) => {
+  const users = await User.find({})
 
-  if (students.length) {
+  if (users.length) {
     ctx.body = {
       success: true,
-      student: students
+      user: users
     }
   } else {
     ctx.body = {
@@ -38,18 +38,18 @@ export const fetchStudent = async (ctx, next) => {
 }
 
 // 查询学生的数据以及附加数据
-export const fetchStudentDetail = async (ctx, next) => {
+export const fetchUserDetail = async (ctx, next) => {
 
   // 利用populate来查询关联info的数据
-  const students = await Student.find({}).populate({
+  const users = await User.find({}).populate({
     path: 'info',
     select: 'hobby height weight'
   }).exec()
 
-  if (students.length) {
+  if (users.length) {
     ctx.body = {
       success: true,
-      student: students
+      user: users
     }
   } else {
     ctx.body = {

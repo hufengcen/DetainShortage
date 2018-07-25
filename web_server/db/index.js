@@ -2,9 +2,9 @@
 import mongoose from 'mongoose'
 import config from '../config'
 
-// 同步引入 info model和 studen model
+// 同步引入 info model和 user model
 require('./schema/info')
-require('./schema/student')
+require('./schema/user')
 
 // 链接mongodb
 export const database = () => {

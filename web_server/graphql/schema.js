@@ -4,7 +4,7 @@ import {
 } from 'graphql';
 // 引入 type
 import {info, infos} from './info'
-import {student} from './student'
+import {user} from './user'
 
 // 建立 schema
 export default new GraphQLSchema({
@@ -13,7 +13,7 @@ export default new GraphQLSchema({
     fields: {
       infos,
       info,
-      student
+      user
     }
   })
 })

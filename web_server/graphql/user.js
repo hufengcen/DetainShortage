@@ -13,11 +13,11 @@ import {
 import mongoose from 'mongoose'
 
 import {InfoType} from './info'
-const Student = mongoose.model('Student')
+const User = mongoose.model('User')
 
 
-let StudentType = new GraphQLObjectType({
-  name: 'Student',
+let UserType = new GraphQLObjectType({
+  name: 'User',
   fields: {
     _id: {
       type: GraphQLID
@@ -38,11 +38,11 @@ let StudentType = new GraphQLObjectType({
 })
 
 
-export const student = {
-  type: new GraphQLList(StudentType),
+export const User = {
+  type: new GraphQLList(UserType),
   args: {},
   resolve (root, params, options) {
-    return Student.find({}).populate({
+    return User.find({}).populate({
       path: 'info',
       select: 'hobby height weight'
     }).exec()

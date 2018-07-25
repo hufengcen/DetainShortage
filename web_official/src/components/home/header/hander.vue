@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     showMeRegist () {
-
+      this.$emit('showMeRegist', true)
     }
   }
 }
@@ -59,7 +59,6 @@ export default {
 }
 .hander ul li:hover {
   color: rgba(255, 255, 255, 1);
-  text-decoration: underline;
 }
 .user_hander {
   width: 200px;

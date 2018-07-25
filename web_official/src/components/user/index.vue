@@ -20,9 +20,9 @@
         </div>
       </div>
       <div class="fastRegist">
-        <span>微信</span>
-        <span>qq</span>
-        <span>新浪微博</span>
+        <img src="./img/wx.png" alt="">
+        <img src="./img/qq.png" alt="">
+        <img src="./img/xl.png" alt="">
       </div>
     </div>
   </section>
@@ -34,15 +34,20 @@ export default {
   components: {
 
   },
+  props: {
+    refuse: {
+      default: true,
+      type: Boolean
+    },
+  },
   data () {
     return {
       msg: '',
-      refuse: true
     }
   },
   methods: {
     disRegistModal () {
-      this.refuse = false
+      this.$emit('showMeRegist', false)
     }
   }
 }
@@ -126,8 +131,10 @@ export default {
   flex-direction: row;
   justify-content:center;
 }
-.modal .fastRegist span{
-  margin: 0 10px;
+.modal .fastRegist img{
+  width: 35px;
+  margin: 0 20px;
+  cursor: pointer;
 }
 
 </style>

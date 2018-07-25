@@ -1,7 +1,7 @@
 <template>
   <section>
-    <VHeader></VHeader>
-    <VUser></VUser>
+    <VHeader @showMeRegist="showMeRegist"></VHeader>
+    <VUser :refuse="refuse" @showMeRegist="showMeRegist"></VUser>
   </section>
 </template>
 
@@ -18,7 +18,12 @@ export default {
   },
   data () {
     return {
-      msg: ''
+      refuse: false
+    }
+  },
+  methods: {
+    showMeRegist (flag) {
+      this.refuse = flag
     }
   }
 }

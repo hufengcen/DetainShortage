@@ -28,6 +28,12 @@ let UserType = new GraphQLObjectType({
     sex: {
       type: GraphQLString
     },
+    phoneNumber: {
+      type: GraphQLInt
+    },
+    icode: {
+      type: GraphQLInt
+    },
     age: {
       type: GraphQLInt
     },

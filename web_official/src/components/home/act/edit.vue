@@ -135,7 +135,7 @@ export default {
   background: rgba(0, 0, 0, 0.5);
   outline: none;
   color: rgba(255, 255, 255, .85);
-  font-size: 22px;
+  font-size: 18px;
   padding-left: 10px;
   border: 0;
   box-sizing: border-box;

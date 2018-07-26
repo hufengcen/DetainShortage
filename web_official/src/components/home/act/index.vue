@@ -17,6 +17,7 @@
       <p>权限设置</p>
     </div>
     <VEdit v-if="editShow" @hideEdit="hideEdit"></VEdit>
+    <VPublish v-if="publishShow" @hidePublish="hidePublish"></VPublish>
   </section>
 </template>
 
@@ -26,6 +27,9 @@ export default {
   components: {
     VEdit (resolve) {
       require(['./edit'], resolve)
+    },
+    VPublish (resolve) {
+      require(['./publish'], resolve)
     }
   },
   props : {
@@ -38,12 +42,13 @@ export default {
     return {
       user: {
         nick_name: '飞天小猪',
-        grade: 1,
+        grade: 10,
         desc: '老夫专干生产队塘，就是一把嗦',
         skill: '钓鱼达人'
       },
       tipShow: false,
-      editShow: false
+      editShow: false,
+      publishShow: false
     }
   },
   methods: {
@@ -53,7 +58,8 @@ export default {
         this.tipShow = true
         return
       } else {
-
+        this.publishShow = true
+        this.$emit('showAct', false)
       }
     },
     showEdit () {
@@ -63,6 +69,9 @@ export default {
     },
     hideEdit () {
       this.editShow = false
+    },
+    hidePublish () {
+      this.publishShow = false
     },
     hideTip () {
       this.tipShow = false

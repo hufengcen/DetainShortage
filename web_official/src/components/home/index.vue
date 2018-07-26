@@ -1,8 +1,8 @@
 <template>
   <section>
     <VHeader @showMeRegist="showMeRegist" @showHideAct="showHideAct" :user="user"></VHeader>
-    <VUser :refuse="refuse" @showMeRegist="showMeRegist"></VUser>
-    <VAct :actShow="actShow"></VAct>
+    <VUser v-if="refuse" @showMeRegist="showMeRegist"></VUser>
+    <VAct :actShow="actShow" @showAct="showAct"></VAct>
   </section>
 </template>
 
@@ -39,6 +39,9 @@ export default {
     },
     showHideAct () {
       this.actShow = !this.actShow
+    },
+    showAct (flag) {
+      this.actShow = flag
     }
   }
 }

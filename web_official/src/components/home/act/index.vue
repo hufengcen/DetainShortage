@@ -16,7 +16,7 @@
       <p :class="tipShow ? 'tip_border' : ''" @click="showEdit">编辑信息</p>
       <p>权限设置</p>
     </div>
-    <VEdit></VEdit>
+    <VEdit v-if="editShow" @hideEdit="hideEdit"></VEdit>
   </section>
 </template>
 
@@ -24,9 +24,9 @@
 export default {
   name: 'index',
   components: {
-    // VEdit (resolve) {
-    //   require(['./edit'], resolve)
-    // }
+    VEdit (resolve) {
+      require(['./edit'], resolve)
+    }
   },
   props : {
     actShow: {
@@ -42,7 +42,8 @@ export default {
         desc: '老夫专干生产队塘，就是一把嗦',
         skill: '钓鱼达人'
       },
-      tipShow: false
+      tipShow: false,
+      editShow: false
     }
   },
   methods: {
@@ -55,8 +56,13 @@ export default {
 
       }
     },
-    showEdit() {
+    showEdit () {
       this.hideTip()
+      this.editShow = true
+      this.$emit('showAct', false)
+    },
+    hideEdit () {
+      this.editShow = false
     },
     hideTip () {
       this.tipShow = false

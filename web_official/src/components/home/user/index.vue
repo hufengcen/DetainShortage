@@ -1,15 +1,15 @@
 <template>
-  <section v-show="refuse">
+  <section>
     <div class="mask">
     </div>
     <div class="modal">
       <p>请输入手机号码</p>
       <div class="">
-        <input type="text" name="" v-model="phoneNumber" :class="phoneFlag ? (phoneFocusFlag ? 'focus' : '') : 'error'" @focus="focus('phone')">
+        <input type="text" name="" v-model="phoneNumber" :class="phoneFlag ? '' : 'error'">
       </div>
       <p>点击获取验证码</p>
       <div class="">
-        <input type="text" name="" v-model="icode" :class="icodeFlag ? (icodeFocusFlag ? 'focus' : '') : 'error'" @focus="focus('icode')">
+        <input type="text" name="" v-model="icode" :class="icodeFlag ? '' : 'error'">
       </div>
       <div class="handles">
         <div class="registLogin" @click="registLogin">
@@ -34,20 +34,12 @@ export default {
   components: {
 
   },
-  props: {
-    refuse: {
-      default: true,
-      type: Boolean
-    },
-  },
   data () {
     return {
       phoneNumber: '',
       icode: '',
       phoneFlag: true,
-      icodeFlag: true,
-      phoneFocusFlag: false,
-      icodeFocusFlag: false
+      icodeFlag: true
     }
   },
   methods: {
@@ -80,17 +72,6 @@ export default {
           this.$emit('showMeRegist', {'show': false, 'login': true})
         }
       })
-    },
-    focus (key) {
-      if (key === 'phone') {
-        this.phoneFocusFlag = true
-        this.icodeFocusFlag = false
-        this.phoneFlag = true
-      } else {
-        this.icodeFocusFlag = true
-        this.phoneFocusFlag = false
-        this.icodeFlag = true
-      }
     }
   }
 }
@@ -134,16 +115,16 @@ export default {
   border: 0;
   box-sizing: border-box;
 }
+.modal input:focus {
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 5px 1px #fff;
+}
 
 .modal .error {
   border: 1px solid red;
   box-shadow: 0px 0px 5px 1px red;
 }
 
-.modal .focus {
-  border: 1px solid #fff;
-  box-shadow: 0px 0px 5px 1px #fff;
-}
 .modal p {
   width: 320px;
   text-align: left;

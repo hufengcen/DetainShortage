@@ -5,14 +5,23 @@
         <p class="title"><span>{{activity}}</span> </p>
         <p class="content"><span>{{content}}</span> </p>
       </div>
-      <div class="gogogo" @click="gogogo">
+      <div class="gogogo" @click="out" v-if="isAdmin === 0">
         我要退出
+      </div>
+      <div class="gogogo" @click="out" v-if="isAdmin === 1">
+        我要解散
       </div>
     </div>
     <div class="chatRoom">
       <div class="chatWindow">
         <div class="win">
-
+          <div class="title">权限设置</div>
+          <p>白金以上可见 <img src="./img/right.png"> </p>
+          <p>无需审核 <img src="./img/right.png"> </p>
+          <p>添加打赏 <img src="./img/right.png"> </p>
+          <p>活动二维码 <img src="./img/right.png"> </p>
+          <p>开放聊天 <img src="./img/right.png"> </p>
+          <p>范围扩大 <img src="./img/right.png"> </p>
         </div>
         <div class="input">
 
@@ -51,6 +60,9 @@
           <div class="other_btn">
             直接拨打110
           </div>
+          <div class="other_btn" @click="hideChat">
+            缩小当前窗口
+          </div>
         </div>
       </div>
 
@@ -69,7 +81,8 @@ export default {
       intro: '',
       content: '附近找几个神C一起飞,位置在独墅湖邻里中心三楼,结束后互相好评有打赏,拿经验拿钱的来玩啊。天坑差评啊~',
       desc: '此人对自己没有任何评价，可能是个基佬',
-      address: '啦啦啦啦皇家鱼塘'
+      address: '啦啦啦啦皇家鱼塘',
+      isAdmin: 1
     }
   },
   props: {
@@ -82,12 +95,20 @@ export default {
 
   },
   methods: {
-    gogogo (e) {
+    out (e) {
       e.cancelBubble = true
-      alert('需要注册一起闹，才能申请加入到他们哦')
+      if (this.isAdmin) {
+        alert('提前结束活动的话，会得到小伙伴的差评哦')
+      } else {
+        alert('确定要退出吗，可能会扣除一定的信誉积分哦')
+      }
+      this.hideChat()
     },
     disWindow () {
       this.$emit('changeProp', false)
+    },
+    hideChat () {
+      this.$emit('showChat', false)
     }
   }
 }
@@ -160,13 +181,35 @@ export default {
 .chat .chatRoom .chatWindow .win {
   width:600px;
   height: 400px;
-  background: rgba(0, 0, 0, .3)
+  background: rgba(0, 0, 0, .3);
+}
+.chat .chatRoom .chatWindow .win .title {
+  height: 44px;
+  line-height: 44px;
+}
+.chat .chatRoom .chatWindow .win p{
+  height: 44px;
+  line-height: 44px;
+  text-align: left;
+  margin: 0 0 1px 0;
+  background: rgba(0, 0, 0, .3);
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat .chatRoom .chatWindow .win p:hover{
+  background: rgba(255, 255, 255, .1)
+}
+.chat .chatRoom .chatWindow .win p img{
+  width: 30px;
+  height: 30px;
 }
 .chat .chatRoom .chatWindow .input {
   width:600px;
   height: 190px;
   margin-top: 20px;
-  background: rgba(0, 0, 0, .3)
+  background: rgba(0, 0, 0, .3);
 }
 .chat .chatRoom .other .manages {
   width:300px;

@@ -2,8 +2,8 @@
   <section>
     <VHeader @showMeRegist="showMeRegist" @showHideAct="showHideAct" :user="user"></VHeader>
     <VUser v-if="refuse" @showMeRegist="showMeRegist"></VUser>
-    <VAct :actShow="actShow" @showAct="showAct"></VAct>
-    <VChat></VChat>
+    <VAct :actShow="actShow" @showAct="showAct" @showChat="showChat"></VAct>
+    <VChat v-if="chatShow" @showChat="showChat"></VChat>
   </section>
 </template>
 
@@ -28,7 +28,8 @@ export default {
     return {
       refuse: false,
       actShow: false,
-      user: {}
+      user: {},
+      chatShow: false
     }
   },
   created () {
@@ -46,6 +47,9 @@ export default {
     },
     showAct (flag) {
       this.actShow = flag
+    },
+    showChat(flag) {
+      this.chatShow = flag
     }
   }
 }

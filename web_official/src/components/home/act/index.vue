@@ -11,7 +11,7 @@
       </div>
       <p @click="publishAct">发布活动</p>
       <p :class="tipJionShow ? 'tip_border' : ''" @click="showJoin">正在参与</p>
-      <p>附近商家</p>
+      <p>周边排名</p>
       <p>邀请好友</p>
       <p :class="tipEditShow ? 'tip_border' : ''" @click="showEdit">编辑信息</p>
       <p>权限设置</p>
@@ -78,6 +78,8 @@ export default {
     },
     showJoin () {
       this.hideTip()
+      this.$emit('showAct', false)
+      this.$emit('showChat', true)
     },
     hideEdit () {
       this.editShow = false

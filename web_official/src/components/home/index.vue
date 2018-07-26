@@ -1,6 +1,6 @@
 <template>
   <section>
-    <VHeader @showMeRegist="showMeRegist" @showHideAct="showHideAct"></VHeader>
+    <VHeader @showMeRegist="showMeRegist" @showHideAct="showHideAct" :user="user"></VHeader>
     <VUser :refuse="refuse" @showMeRegist="showMeRegist"></VUser>
     <VAct :actShow="actShow"></VAct>
   </section>
@@ -14,7 +14,7 @@ export default {
       require(['./header/index'], resolve)
     },
     VUser (resolve) {
-      require(['../user/index'], resolve)
+      require(['./user/index'], resolve)
     },
     VAct (resolve) {
       require(['./act/index'], resolve)
@@ -23,12 +23,19 @@ export default {
   data () {
     return {
       refuse: false,
-      actShow: false
+      actShow: false,
+      user: {}
     }
   },
+  created () {
+    this.user = JSON.parse(window.sessionStorage.getItem('userInfo'))
+  },
   methods: {
-    showMeRegist (flag) {
-      this.refuse = flag
+    showMeRegist (obj) {
+      this.refuse = obj.show
+      if (obj.login) {
+        this.user = JSON.parse(window.sessionStorage.getItem('userInfo'))
+      }
     },
     showHideAct () {
       this.actShow = !this.actShow

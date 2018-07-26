@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="header">
-      <VHander @showMeRegist="showMeRegist" @showHideAct="showHideAct"></VHander>
+      <VHander @showMeRegist="showMeRegist" @showHideAct="showHideAct" :user="user"></VHander>
       <VBanner></VBanner>
     </div>
   </section>
@@ -20,7 +20,13 @@ export default {
   },
   data () {
     return {
-      msg: ''
+
+    }
+  },
+  props: {
+    user: {
+      default: {},
+      type: Object
     }
   },
   methods: {

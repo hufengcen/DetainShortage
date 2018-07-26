@@ -28,8 +28,14 @@ export default {
       user: null
     }
   },
+  props: {
+    user: {
+      default: {},
+      type: Object
+    }
+  },
   created () {
-    this.user = JSON.parse(window.sessionStorage.getItem('userInfo'))
+
   },
   methods: {
     showMeRegist () {

@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     disRegistModal () {
-      this.$emit('showMeRegist', false)
+      this.$emit('showMeRegist', {'show': false, 'login': false})
     },
     registLogin () {
       //本地校验手机号 验证码
@@ -76,9 +76,8 @@ export default {
       }
       this.$ajaxApi.registLogin(param).then((res) => {
         if (res.data.success) {
-          console.log(res.data);
-          this.$emit('showMeRegist', false)
           window.sessionStorage.setItem('userInfo', JSON.stringify(res.data.user))
+          this.$emit('showMeRegist', {'show': false, 'login': true})
         }
       })
     },

@@ -3,6 +3,7 @@
     <VHeader @showMeRegist="showMeRegist" @showHideAct="showHideAct" :user="user"></VHeader>
     <VUser v-if="refuse" @showMeRegist="showMeRegist"></VUser>
     <VAct :actShow="actShow" @showAct="showAct"></VAct>
+    <VChat></VChat>
   </section>
 </template>
 
@@ -18,6 +19,9 @@ export default {
     },
     VAct (resolve) {
       require(['./act/index'], resolve)
+    },
+    VChat (resolve) {
+      require(['./chat/index'], resolve)
     }
   },
   data () {

@@ -10,10 +10,10 @@
         </div>
       </div>
       <p @click="publishAct">发布活动</p>
-      <p>正在参与</p>
+      <p :class="tipJionShow ? 'tip_border' : ''" @click="showJoin">正在参与</p>
       <p>附近商家</p>
       <p>邀请好友</p>
-      <p :class="tipShow ? 'tip_border' : ''" @click="showEdit">编辑信息</p>
+      <p :class="tipEditShow ? 'tip_border' : ''" @click="showEdit">编辑信息</p>
       <p>权限设置</p>
     </div>
     <VEdit v-if="editShow" @hideEdit="hideEdit"></VEdit>
@@ -46,16 +46,25 @@ export default {
         desc: '老夫专干生产队塘，就是一把嗦',
         skill: '钓鱼达人'
       },
-      tipShow: false,
+      tipEditShow: false,
+      tipJionShow: false,
       editShow: false,
-      publishShow: false
+      publishShow: false,
+      action: {
+        doWhat: '1111111'
+      }
     }
   },
   methods: {
     publishAct () {
+      if (this.action) {
+        alert('您已发布一个活动，快去参加。当然您也可以提前结束该活动。')
+        this.tipJionShow = true
+        return
+      }
       if (this.user.grade < 10) {
         alert('你的等级不够哦，快去补充个人信息，或者参与活动去提升等级吧')
-        this.tipShow = true
+        this.tipEditShow = true
         return
       } else {
         this.publishShow = true
@@ -67,6 +76,9 @@ export default {
       this.editShow = true
       this.$emit('showAct', false)
     },
+    showJoin () {
+      this.hideTip()
+    },
     hideEdit () {
       this.editShow = false
     },
@@ -74,7 +86,7 @@ export default {
       this.publishShow = false
     },
     hideTip () {
-      this.tipShow = false
+      this.tipEditShow = this.tipJionShow = false
     }
   }
 }

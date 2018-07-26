@@ -16,6 +16,12 @@
     <div class="activity">
       <div class="actIntro">
         <p class="title"><span>{{activity}}</span> </p>
+        <p class="tips">
+          <span>3674人浏览</span>
+          <span>3人参与</span>
+          <span>1个美女，2个帅哥</span>
+          <span>活动结束后有赏金</span>
+        </p>
         <p class="content"><span>{{content}}</span> </p>
       </div>
       <div class="gogogo" @click="gogogo">
@@ -34,7 +40,7 @@ export default {
       nick_name: '来自星星的狗',
       activity: '独墅湖邻里中心5黑',
       intro: '',
-      content: '附近找几个神C一起飞,位置在独墅湖邻里中心三楼',
+      content: '附近找几个神C一起飞,位置在独墅湖邻里中心三楼,结束后互相好评有打赏,拿经验拿钱的来玩啊。天坑差评啊~',
       desc: '此人对自己没有任何评价，可能是个基佬',
       address: '啦啦啦啦皇家鱼塘'
     }
@@ -117,8 +123,21 @@ export default {
 .infoList .activity .actIntro .title{
   font-size: 22px;
 }
+.infoList .activity .actIntro .tips{
+  font-size: 14px;
+  padding: 0 100px;
+}
+.infoList .activity .actIntro .tips span{
+  display: inline-block;
+  margin-right: 15px;
+}
 .infoList .activity .actIntro .content{
-  padding-top: 20px
+  padding-top: 20px;
+  text-align: left;
+  padding: 20px 100px;
+  line-height: 30px;
+  text-indent: 32px;
+  letter-spacing: 1.5px;
 }
 .infoList .activity .gogogo{
   margin: 0 auto;

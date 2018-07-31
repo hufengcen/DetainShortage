@@ -25,13 +25,13 @@ export default {
   },
   props: {
     user: {
-      default: {},
+      default: () => { return {} },
       type: Object
     }
   },
   methods: {
     showMeRegist (flag) {
-      this.$emit('showMeRegist', flag)
+      this.$emit('showMeRegist', {'show': flag})
     },
     showHideAct () {
       this.$emit('showHideAct')

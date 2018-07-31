@@ -35,9 +35,9 @@ export default {
         nick_name: '飞天小猪',
         single: '老夫专干生产队塘，就是一把嗦',
         realname: '张扬',
-        icardCode: '32102319880929481x',
+        icardCode: '32102319880929481x'
       },
-      tipShow: false,
+      tipShow: false
     }
   },
   computed: {

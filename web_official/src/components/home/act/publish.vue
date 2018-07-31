@@ -36,9 +36,9 @@ export default {
         goWhere: '国际科技园哪',
         setTime: new Date(),
         acterNum: '15',
-        doWhat: '打牌啊',
+        doWhat: '打牌啊'
       },
-      tipShow: false,
+      tipShow: false
     }
   },
   computed: {

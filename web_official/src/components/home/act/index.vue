@@ -32,7 +32,7 @@ export default {
       require(['./publish'], resolve)
     }
   },
-  props : {
+  props: {
     actShow: {
       default: false,
       type: Boolean
@@ -65,7 +65,6 @@ export default {
       if (this.user.grade < 10) {
         alert('你的等级不够哦，快去补充个人信息，或者参与活动去提升等级吧')
         this.tipEditShow = true
-        return
       } else {
         this.publishShow = true
         this.$emit('showAct', false)

@@ -47,7 +47,7 @@ export default {
       this.$emit('showMeRegist', {'show': false, 'login': false})
     },
     registLogin () {
-      //本地校验手机号 验证码
+      // 本地校验手机号 验证码
       if (this.phoneNumber.match(/^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/) === null) {
         this.phoneFlag = false
       } else {
@@ -64,7 +64,7 @@ export default {
       this.phoneFocusFlag = this.icodeFocusFlag = false
       let param = {
         phoneNumber: this.phoneNumber,
-        icode: this.icode,
+        icode: this.icode
       }
       this.$ajaxApi.registLogin(param).then((res) => {
         if (res.data.success) {

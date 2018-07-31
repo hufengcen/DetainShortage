@@ -48,7 +48,7 @@ export default {
     showAct (flag) {
       this.actShow = flag
     },
-    showChat(flag) {
+    showChat (flag) {
       this.chatShow = flag
     }
   }

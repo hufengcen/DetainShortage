@@ -25,12 +25,11 @@ export default {
   name: 'hander',
   data () {
     return {
-      user: null
     }
   },
   props: {
     user: {
-      default: {},
+      default: () => { return {} },
       type: Object
     }
   },

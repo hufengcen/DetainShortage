@@ -12,10 +12,10 @@ function AjaxClient (baseUrl) {
   })
   this.axiosInstance.interceptors.request.use((config) => {
     config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-    if(config.method === 'post') {
-        config.data = Qs.stringify( {
-            ...config.data
-        })
+    if (config.method === 'post') {
+      config.data = Qs.stringify({
+        ...config.data
+      })
     }
     return config
   })
@@ -48,7 +48,6 @@ AjaxClient.prototype.post = function (url, params) {
     })
   })
 }
-
 
 AjaxClient.prototype.get = function (url, params) {
   const key = md5(url + JSON.stringify(params))

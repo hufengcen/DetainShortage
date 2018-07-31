@@ -37,14 +37,11 @@ export const fetchUser = async (ctx, next) => {
   }
 }
 
-// 查询学生的数据以及附加数据
+// 根据id查询用户的数据
 export const fetchUserDetail = async (ctx, next) => {
-
-  // 利用populate来查询关联info的数据
-  const users = await User.find({}).populate({
-    path: 'info',
-    select: 'hobby height weight'
-  }).exec()
+  const params = ctx.params
+  // const params = ctx.querystring
+  const users = await User.find({'_id': params._id})
 
   if (users.length) {
     ctx.body = {
@@ -56,4 +53,21 @@ export const fetchUserDetail = async (ctx, next) => {
       success: false
     }
   }
+}
+
+// 根据id删除用户数据
+export const deleteUser = async (ctx, next) => {
+  const params = ctx.params
+  // const params = ctx.querystring
+  await User.remove({'_id': params._id}, (err, res) => {
+    if (err) {
+      ctx.body = {
+        success: false
+      }
+    } else {
+      ctx.body = {
+        success: true
+      }
+    }
+  })
 }

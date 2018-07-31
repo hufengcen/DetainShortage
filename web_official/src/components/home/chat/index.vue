@@ -16,12 +16,12 @@
       <div class="chatWindow">
         <div class="win">
           <div class="title">权限设置</div>
-          <p>白金以上可见 <img src="./img/right.png"> </p>
-          <p>无需审核 <img src="./img/right.png"> </p>
-          <p>添加打赏 <img src="./img/right.png"> </p>
-          <p>活动二维码 <img src="./img/right.png"> </p>
-          <p>开放聊天 <img src="./img/right.png"> </p>
-          <p>范围扩大 <img src="./img/right.png"> </p>
+          <p @click="powerSet(0)">白金以上可见 <img src="./img/right.png" v-if="power[0]"> </p>
+          <p @click="powerSet(1)">无需审核 <img src="./img/right.png" v-if="power[1]"> </p>
+          <p @click="powerSet(2)">添加打赏 <img src="./img/right.png" v-if="power[2]"> </p>
+          <p @click="powerSet(3)">活动二维码 <img src="./img/right.png" v-if="power[3]"> </p>
+          <p @click="powerSet(4)">开放聊天 <img src="./img/right.png" v-if="power[4]"> </p>
+          <p @click="powerSet(5)">范围扩大 <img src="./img/right.png" v-if="power[5]"> </p>
         </div>
         <div class="input">
 
@@ -82,7 +82,15 @@ export default {
       content: '附近找几个神C一起飞,位置在独墅湖邻里中心三楼,结束后互相好评有打赏,拿经验拿钱的来玩啊。天坑差评啊~',
       desc: '此人对自己没有任何评价，可能是个基佬',
       address: '啦啦啦啦皇家鱼塘',
-      isAdmin: 1
+      isAdmin: 1,
+      power: {
+        '0':false,
+        '1':false,
+        '2':false,
+        '3':false,
+        '4':false,
+        '5':false
+      }
     }
   },
   props: {
@@ -109,6 +117,9 @@ export default {
     },
     hideChat () {
       this.$emit('showChat', false)
+    },
+    powerSet (type) {
+      this.power[type] = !this.power[type]
     }
   }
 }

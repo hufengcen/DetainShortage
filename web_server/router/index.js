@@ -1,6 +1,6 @@
 import { graphqlKoa, graphiqlKoa } from 'graphql-server-koa'
 import {saveInfo, fetchInfo} from '../ctr/info'
-import {saveUser, fetchUser, fetchUserDetail, deleteUser, updateUser} from '../ctr/user'
+import {saveUser, fetchUser, fetchUserDetail, deleteUser, updateUser, login} from '../ctr/user'
 
 // 引入schema
 import schema from '../graphql/schema'
@@ -11,6 +11,7 @@ router.post('/saveinfo', saveInfo)
       .get('/info', fetchInfo)
       .post('/saveUser', saveUser)
       .post('/updateUser', updateUser)
+      .post('/login', login)
       .get('/user', fetchUser)
       .get('/userDetail/:_id', fetchUserDetail)
       .get('/deleteUser/:_id', deleteUser)

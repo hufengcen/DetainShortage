@@ -63,12 +63,16 @@ export const updateUser = async (ctx, next) => {
 export const fetchUserDetail = async (ctx, next) => {
   const params = ctx.params
   // const params = ctx.querystring
-  const users = await User.find({'_id': params._id})
+  const user = await User.find({'_id': params._id})
 
   if (users.length) {
     ctx.body = {
       success: true,
-      user: users
+      user: {
+        nick_name: user.nickname,
+        single: user.single,
+        grade: user.grade || 0
+      }
     }
   } else {
     ctx.body = {
@@ -92,4 +96,27 @@ export const deleteUser = async (ctx, next) => {
       }
     }
   })
+}
+
+// 登录
+export const login = async (ctx, next) => {
+  // 获取前端请求的数据
+  const opts = ctx.request.body
+
+  const user = await User.find({phoneNumber: opts.phoneNumber, icode: opts.icode})
+
+  if (user.length === 1) {
+    ctx.body = {
+      success: true,
+      user: {
+        nickname: user[0].nickname,
+        single: user[0].single,
+        realed: user[0].icardCode ? true : false
+      }
+    }
+  } else {
+    ctx.body = {
+      success: false
+    }
+  }
 }

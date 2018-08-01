@@ -7,7 +7,10 @@ const ObjectId = Schema.Types.ObjectId
 const UserSchema = new Schema({
   phoneNumber: Number,
   icode: Number,
-  name: String,
+  nickname: String,
+  realname: String,
+  icardCode: Number,
+  single: String,
   sex: String,
   age: Number,
   info: {
